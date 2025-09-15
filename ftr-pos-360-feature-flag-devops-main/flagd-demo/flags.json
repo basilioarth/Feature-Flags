@@ -1,0 +1,45 @@
+{
+  "$schema": "https://flagd.dev/schema/v0/flags.json",
+  "flags": {
+    "LOGIN_PAGE": {
+      "state": "ENABLED",
+      "variants": {
+        "on": true,
+        "off": false
+      },
+      "defaultVariant": "off",
+      "targeting": {
+        "fractional": [
+          [
+            "on",
+            10
+          ],
+          [
+            "off",
+            90
+          ]
+        ]
+      }
+    },
+    "NEW_FLAG": {
+      "state": "ENABLED",
+      "variants": {
+        "on": true,
+        "off": false
+      },
+      "defaultVariant": "on",
+      "targeting": {
+        "if": [
+          {
+            "and": [
+              { "==": [{ "var": "user" }, "rocketseat-user"] },
+              { "==": [{ "var": "group" }, "rocketseat-group"] }
+            ]
+          },
+          "on",
+          "off"
+        ]
+      }
+    }
+  }
+}
